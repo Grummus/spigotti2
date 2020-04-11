@@ -18,3 +18,14 @@ OUTPUT=/tmp/output.sh.$$
 
 trap "rm $OUTPUT; rm $INPUT; exit" SIGHUP SIGINT SIGTERM
 
+DEPS="vim screen ranger nodejs npm dialog"
+
+echo "SpigotTI requires the following dependencies: $DEPS"
+read -p "Install Dependencies? [y/n] " depyesno
+
+[ ! $depyesno == y ] && exit 1
+apt update $$ apt install $DEPS
+
+cd package
+# cp -R * /
+
