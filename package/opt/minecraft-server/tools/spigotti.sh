@@ -26,7 +26,7 @@ for file in $workingdir/tools/spigotti/*; do
 	echo "$file loaded!"
   fi
 done
-read -p "Pausing..." ree
+read -p "Pausing function loader..." ree
 
 function quit {
 	clear
@@ -35,7 +35,7 @@ function quit {
 
 # MAIN PROGRAM LOOP
 # while true; do
-	cd $serverdir
+	cd $workingdir
 	dialog --backtitle "$backtitle" --title "Home" \
 	--menu "Welcome!" 15 50 8 \
 	1 "Server Manager" \
@@ -57,6 +57,6 @@ function quit {
 		7) quit;;
 	esac
 # done
-read -p "Pausing..." yeetus
+read -p "Pausing end..." yeetus
 quit
 # exit
