@@ -4,8 +4,8 @@ function mkserver () {
     read -p "Name your new server: " servername
     read -p "How much RAM shall I allocate to it? (eg. 2G) " serverram
     read -p "Which port would you like your server to be hosted on? [Default: 25565] " serverport
-    mkdir servers/$servername
-    cd servers/$servername
+    mkdir $workingdir/servers/$servername
+    cd $workingdir/servers/$servername
     echo "servername=$servername" >> config
     echo "MINRAM=$serverram" >> config
     echo "MAXRAM=$serverram" >> config

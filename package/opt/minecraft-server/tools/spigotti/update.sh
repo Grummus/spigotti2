@@ -1,6 +1,6 @@
 title="Server Updater"
 function update () {
-    serverdir=servers/$1
+    serverdir=$workingdir/servers/$1
     if ! tmux ls | grep $server; then
         cd $serverdir
         dialog --backtitle "$backtitle" --title "$title" \
