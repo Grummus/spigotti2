@@ -19,5 +19,9 @@ function mkserver () {
     rconport=$(expr $serverport + 10)
     echo "rcon.port=$rconport" >> server.properties
 
+    # make server start script
+    echo "sudo systemctl start minecraft@servername.service" >> start.sh
+    chmod +x start.sh
+
     update $servername
 }
