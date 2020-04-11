@@ -53,7 +53,7 @@ function quit {
 		3) mkserver;;  
 		4) delserver;; 
 		5) gtop;; 
-		6) ranger;;
+		6) ranger $workingdir;;
 		7) quit;;
 	esac
 # done
