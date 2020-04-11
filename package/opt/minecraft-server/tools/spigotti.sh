@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # vars
-workingdir="/opt/minecraft-server"
+# CHANGE THIS TO /opt/minecraft-server
+workingdir="/home/graham/coding/spigotti2/package/opt/minecraft-server"
 tooldir="opt/minecraft-server/tools/spigotti"
 backtitle="Spigotti 2.0"
 
@@ -19,13 +20,13 @@ cd $workingdir
 export NCURSES_NO_UTF8_ACS=1
 
 # source all files in spigotti dir
-for file in /opt/minecraft-server/tools/spigotti/*; do
+for file in $workingdir/tools/spigotti/*; do
   if [ -f "$file" ] ; then
     source "$file"
 	echo "$file loaded!"
   fi
 done
-read -p "Pausing" ree
+read -p "Pausing..." ree
 
 function quit {
 	clear
@@ -34,6 +35,7 @@ function quit {
 
 # MAIN PROGRAM LOOP
 # while true; do
+	cd $serverdir
 	dialog --backtitle "$backtitle" --title "Home" \
 	--menu "Welcome!" 15 50 8 \
 	1 "Server Manager" \
@@ -46,10 +48,10 @@ function quit {
 
 	response=$(<"${INPUT}")
 	case $response in
-		1) ./$tooldir/serverman.sh;; 
-		2) ./$tooldir/serverstat.sh;;
+		1) serverman;; 
+		2) serverstat;;
 		3) mkserver;;  
-		4) ./$tooldir/delserver.sh;; 
+		4) delserver;; 
 		5) gtop;; 
 		6) ranger;;
 		7) quit;;
