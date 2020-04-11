@@ -2,7 +2,7 @@ title="Server Updater"
 function update () {
     serverdir=servers/$1
     if ! tmux ls | grep $server; then
-        cd serverdir
+        cd $serverdir
         dialog --backtitle "$backtitle" --title "$title" \
         --menu "Select A Server Type:" 15 50 4 \
         spigot "(Recommended)" \
